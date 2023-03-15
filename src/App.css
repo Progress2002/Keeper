@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* position: relative; */
 }
 
 body {
@@ -12,6 +13,7 @@ body {
   font-family: sans-serif;
   position: relative;
   min-height: 660px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* header section */
@@ -34,7 +36,7 @@ header {
 
 header h1 {
   color: #fff;
-  font-weight: 200;
+  font-weight: 700;
 }
 
 header span {
@@ -107,7 +109,9 @@ header span {
   padding: 15px;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
-  font-size: 17px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .note-container:nth-child(even) {
@@ -117,7 +121,7 @@ header span {
 }
 
 .note-container .title {
-  font-size: inherit;
+  font-size: 16px;
   display: flex;
   justify-content: space-between;
 }
@@ -135,9 +139,9 @@ header span {
 
 .date {
   color: rgba(0, 0, 0, 0.5);
-  font-weight: bolder;
+  font-weight: 700;
   font-size: 13px;
-  width: 5rem;
+  width: 6rem;
 }
 
 .delete-btn-container button {
@@ -145,7 +149,7 @@ header span {
   border: none;
   background-color: inherit;
   color: #e0ad21;
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 13px;
   cursor: pointer;
 }

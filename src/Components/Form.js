@@ -34,7 +34,7 @@ const Form = (props) => {
     setNoteArr([
       ...noteArr,
       {
-        title: title,
+        title: title.toUpperCase(),
         content: text,
         id: ID,
         date: newDate,
