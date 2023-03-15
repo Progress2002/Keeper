@@ -7,7 +7,7 @@ import Form from "./Components/Form";
 
 const App = () => {
   const [noteArr, setNoteArr] = useState(
-    JSON.parse(localStorage.getItem("notes"))
+    JSON.parse(localStorage.getItem("notes")) ?? []
   );
 
   useEffect(() => {
