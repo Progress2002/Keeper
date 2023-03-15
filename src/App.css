@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
 
 * {
   margin: 0;
@@ -13,7 +13,7 @@ body {
   font-family: sans-serif;
   position: relative;
   min-height: 660px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* header section */
@@ -94,6 +94,7 @@ header span {
   box-shadow: 0 3px 2px #acaaaa;
 }
 
+/* Note section */
 .note-section {
   display: flex;
   flex-wrap: wrap;
@@ -126,6 +127,10 @@ header span {
   justify-content: space-between;
 }
 
+.note-container .title span {
+  width: 5.4rem;
+}
+
 .note-container .content {
   font-weight: 500;
   margin-top: 5px;
@@ -154,6 +159,7 @@ header span {
   cursor: pointer;
 }
 
+/* Footer section */
 footer {
   text-align: center;
   width: 100%;
@@ -164,4 +170,28 @@ footer {
 
 footer p {
   color: #a3a1a1;
+}
+
+@media (min-width: 765px) {
+  /* form section */
+  .form-section form {
+    width: 30rem;
+  }
+
+  /* Note section */
+  .note-section {
+    gap: 25px;
+  }
+
+  .note {
+    width: 17rem;
+    letter-spacing: auto;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .note-container:nth-child(even) {
+    width: auto;
+    display: block;
+  }
 }
