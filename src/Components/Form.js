@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";
 
 const Form = (props) => {
@@ -7,6 +7,7 @@ const Form = (props) => {
   const date = new Date().toLocaleDateString();
   const time = new Date().toLocaleTimeString();
 
+  const [disable, setDisable] = useState(true);
   const [formData, setFormData] = useState({
     title: "",
     text: "",
@@ -24,10 +25,16 @@ const Form = (props) => {
     });
   };
 
+  useEffect(() => {
+    const { title, text } = formData;
+    title !== "" && text !== "" ? setDisable(false) : setDisable(true);
+  }, [formData]);
+
   const handleFormSubmission = (e) => {
     e.preventDefault();
     const newDate = new Date().toLocaleDateString();
     const newTime = new Date().toLocaleTimeString();
+    
     const { title, text } = formData;
     if (title === "" || text === "") return;
 
@@ -48,6 +55,8 @@ const Form = (props) => {
       date: newDate,
       time: newTime,
     });
+
+    setDisable(true);
   };
 
   return (
@@ -67,7 +76,12 @@ const Form = (props) => {
           onChange={handleInput}
         />
         <div className="add-btn-container">
-          <button type="submit">Add</button>
+          <button
+            style={{ backgroundColor: disable ? "#d1d1d1" : "#f5ba13" }}
+            disabled={disable}
+            type="submit">
+            Add
+          </button>
         </div>
       </form>
     </section>
