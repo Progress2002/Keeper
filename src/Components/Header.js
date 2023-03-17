@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import HighlightIcon from '@material-ui/icons/Highlight';
 
 const Header = () => {
   const Time = new Date().toLocaleTimeString();
@@ -15,7 +16,7 @@ const Header = () => {
   return (
     <div className="header-container">
       <header>
-        <h1>Keeper</h1>
+        <h1><HighlightIcon/>Keeper</h1>
         <span>{time}</span>
       </header>
     </div>
