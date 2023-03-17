@@ -7,14 +7,14 @@
 }
 
 body {
-  background: #eee;
+  background-color: #eee;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
   padding: 0;
   overflow-x: hidden;
   font-family: sans-serif;
   position: relative;
   min-height: 660px;
   font-family: "Montserrat", sans-serif;
-  /* background-color: #d1d1d1; */
 }
 
 /* header section */
