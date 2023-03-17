@@ -1,5 +1,6 @@
 import React from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
+import Tooltip from '@material-ui/core/Tooltip';
 
 const Note = (props) => {
   const { title, content, id, deleteNote, time, date } = props;
@@ -13,9 +14,11 @@ const Note = (props) => {
         <p className="content">{content}</p>
         <div className="delete-btn-container">
           <span className="date">{time}</span>
-          <button onClick={() => deleteNote(id)}>
-            <DeleteIcon />
-          </button>
+          <Tooltip aria-label="delete" title="Delete">
+            <button onClick={() => deleteNote(id)}>
+              <DeleteIcon aria-label="delete" />
+            </button>
+          </Tooltip>
         </div>
       </div>
     </div>

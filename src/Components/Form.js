@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
+import Tooltip from "@material-ui/core/Tooltip";
 
 const Form = (props) => {
   const { noteArr, setNoteArr } = props;
@@ -90,7 +91,9 @@ const Form = (props) => {
           {disable ? (
             btnAdd("#d1d1d1", disable)
           ) : (
-            <Zoom in={true}>{btnAdd("#f5ba13", disable)}</Zoom>
+            <Tooltip title="Add" aria-label="add">
+              <Zoom in={true}>{btnAdd("#f5ba13", disable)}</Zoom>
+            </Tooltip>
           )}
         </div>
       </form>
