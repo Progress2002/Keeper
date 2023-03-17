@@ -82,17 +82,11 @@ header span {
 }
 
 .add-btn-container button {
-  background-color: #f5ba13;
   color: #eee;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  padding: 15px 10px;
-  font-size: 13px;
-  font-weight: bold;
   position: relative;
-  bottom: 7px;
-  box-shadow: 0 3px 2px #acaaaa;
+  bottom: 6px;
+  width: 42px;
+  height: 47px;
 }
 
 /* Note section */
@@ -119,7 +113,7 @@ header span {
 .note-container:nth-child(even) {
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .note-container .title {
@@ -141,6 +135,7 @@ header span {
   margin-top: 15px;
   display: flex;
   justify-content: space-between;
+  align-items: end;
 }
 
 .date {

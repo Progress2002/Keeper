@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";
+import AddIcon from "@material-ui/icons/Add";
+import Fab from "@material-ui/core/Fab";
+import Zoom from "@material-ui/core/Zoom";
 
 const Form = (props) => {
   const { noteArr, setNoteArr } = props;
@@ -34,7 +37,7 @@ const Form = (props) => {
     e.preventDefault();
     const newDate = new Date().toLocaleDateString();
     const newTime = new Date().toLocaleTimeString();
-    
+
     const { title, text } = formData;
     if (title === "" || text === "") return;
 
@@ -59,6 +62,12 @@ const Form = (props) => {
     setDisable(true);
   };
 
+  const btnAdd = (bgColor, bool) => (
+    <Fab style={{ backgroundColor: bgColor }} disabled={bool} type="submit">
+      <AddIcon />
+    </Fab>
+  );
+
   return (
     <section className="form-section">
       <form onSubmit={handleFormSubmission}>
@@ -68,20 +77,21 @@ const Form = (props) => {
           name="title"
           value={formData.title}
           onChange={handleInput}
+          autoCorrect="off"
         />
         <textarea
           placeholder="Take a note..."
           name="text"
           value={formData.text}
           onChange={handleInput}
+          autoCorrect="off"
         />
         <div className="add-btn-container">
-          <button
-            style={{ backgroundColor: disable ? "#d1d1d1" : "#f5ba13" }}
-            disabled={disable}
-            type="submit">
-            Add
-          </button>
+          {disable ? (
+            btnAdd("#d1d1d1", disable)
+          ) : (
+            <Zoom in={true}>{btnAdd("#f5ba13", disable)}</Zoom>
+          )}
         </div>
       </form>
     </section>
